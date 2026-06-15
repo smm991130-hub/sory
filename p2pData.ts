@@ -1,0 +1,135 @@
+import { P2POffer } from '../types';
+
+export const generateP2POffers = (): P2POffer[] => [
+  {
+    id: '1',
+    advertiser: {
+      name: 'CRYPTO$MAN',
+      orders: 112,
+      completionRate: 98,
+      verified: true,
+    },
+    price: 12989,
+    available: 1787.79,
+    minLimit: 1000000,
+    maxLimit: 23200000,
+    paymentMethods: ['Humo', 'Uzcard', 'Kapitalbank'],
+    isLimited: true,
+  },
+  {
+    id: '2',
+    advertiser: {
+      name: 'iopakit',
+      orders: 936,
+      completionRate: 100,
+      verified: true,
+    },
+    price: 9999,
+    available: 100.93,
+    minLimit: 1,
+    maxLimit: 10,
+    paymentMethods: ['Bank Transfer'],
+    isLimited: false,
+  },
+  {
+    id: '3',
+    advertiser: {
+      name: 'ViSA_Mastercard_PRO',
+      orders: 353,
+      completionRate: 97,
+      verified: true,
+    },
+    price: 12345,
+    available: 2500,
+    minLimit: 10000000,
+    maxLimit: 30000000,
+    paymentMethods: ['Uzum Bank'],
+    isLimited: false,
+  },
+  {
+    id: '4',
+    advertiser: {
+      name: 'BestChangeUZ',
+      orders: 8,
+      completionRate: 100,
+      verified: false,
+    },
+    price: 12779,
+    available: 101.07,
+    minLimit: 63000,
+    maxLimit: 500000,
+    paymentMethods: ['Humo', 'Uzum Bank', 'Uzcard'],
+    isLimited: false,
+  },
+  {
+    id: '5',
+    advertiser: {
+      name: 'CryptoTraderUZ',
+      orders: 524,
+      completionRate: 99,
+      verified: true,
+    },
+    price: 12650,
+    available: 5000,
+    minLimit: 500000,
+    maxLimit: 50000000,
+    paymentMethods: ['Uzcard', 'Humo'],
+    isLimited: false,
+  },
+  {
+    id: '6',
+    advertiser: {
+      name: 'FastExchange',
+      orders: 1205,
+      completionRate: 100,
+      verified: true,
+    },
+    price: 12890,
+    available: 350.50,
+    minLimit: 100000,
+    maxLimit: 4500000,
+    paymentMethods: ['Uzum Bank', 'Kapitalbank'],
+    isLimited: false,
+  },
+  {
+    id: '7',
+    advertiser: {
+      name: 'TashkentCrypto',
+      orders: 89,
+      completionRate: 96,
+      verified: false,
+    },
+    price: 13100,
+    available: 200,
+    minLimit: 50000,
+    maxLimit: 2500000,
+    paymentMethods: ['Humo'],
+    isLimited: false,
+  },
+  {
+    id: '8',
+    advertiser: {
+      name: 'USDT_Master',
+      orders: 445,
+      completionRate: 98,
+      verified: true,
+    },
+    price: 12550,
+    available: 1500,
+    minLimit: 200000,
+    maxLimit: 18000000,
+    paymentMethods: ['Uzcard', 'Bank Transfer'],
+    isLimited: false,
+  },
+];
+
+export const getPaymentMethodColor = (method: string): { bg: string; text: string; dot: string } => {
+  const colors: { [key: string]: { bg: string; text: string; dot: string } } = {
+    'Humo': { bg: 'bg-emerald-50', text: 'text-emerald-700', dot: 'bg-emerald-500' },
+    'Uzcard': { bg: 'bg-blue-50', text: 'text-blue-700', dot: 'bg-blue-500' },
+    'Uzum Bank': { bg: 'bg-orange-50', text: 'text-orange-700', dot: 'bg-orange-500' },
+    'Kapitalbank': { bg: 'bg-purple-50', text: 'text-purple-700', dot: 'bg-purple-500' },
+    'Bank Transfer': { bg: 'bg-slate-100', text: 'text-slate-700', dot: 'bg-slate-500' },
+  };
+  return colors[method] || { bg: 'bg-gray-100', text: 'text-gray-700', dot: 'bg-gray-500' };
+};
